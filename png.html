@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .title {
+            display: grid;
+            height: 750px;
+
+            grid-template-columns: minmax(160px, 400px) 300px minmax(400px, 1000px);
+            grid-auto-flow: column;
+            grid-template-rows: 100px;
+
+        }
+
+        .one {
+            display: grid;
+            grid-template-rows: 100px 80px 690px 80px;
+            background-color: #1e2933;
+            grid-row-start: 1;
+            grid-row-end: 10;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-gap: 20px;
+            color: white;
+            font-size: 15px;
+            line-height: 25px;
+        }
+
+        .two {
+            display: grid;
+            background-color: #e6e6e6;
+            grid-row-start: 2;
+            grid-row-end: 10;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-template-rows: 50px repeat(8, 100px);
+            line-height: 15px;
+        }
+
+        .three {
+            display: grid;
+            background-color: rgb(248, 250, 253);
+            grid-row-start: 2;
+            grid-row-end: 10;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-template-rows: 50px 750px 50px;
+        }
+
+        .four {
+            background-color: #e6e6e6;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            border-bottom-style: solid;
+            border-color: #eaedf3;
+            border-width: 1px;
+        }
+
+        .logo {
+            grid-row-start: 1;
+            grid-row-end: 2;
+            border-bottom-style: solid;
+            border-color: #2e3a45;
+            border-width: 1px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .name {
+            grid-row-start: 2;
+            grid-row-end: 3;
+            border-bottom-style: solid;
+            border-color: #2e3a45;
+            border-width: 1px;
+        }
+
+        .name1 {
+            margin-left: 15px;
+        }
+
+        .name2 {
+            line-height: 8px;
+            position: relative;
+            left: 10px;
+        }
+
+        .body {
+            grid-row-start: 3;
+            grid-row-end: 4;
+            border-bottom-style: solid;
+            border-color: #2e3a45;
+            border-width: 1px;
+        }
+
+        .area1 {
+            grid-row-start: 1;
+            grid-row-end: 2;
+            border-bottom-style: solid;
+            border-color: #eaedf3;
+            border-width: 1px;
+            line-height: 5px;
+            margin-left: 30px;
+        }
+
+        .area2 {
+            grid-row-start: 2;
+            grid-row-end: 3;
+            border-bottom-style: solid;
+            border-color: #eaedf3;
+            border-width: 1px;
+            display: flex;
+        }
+
+        .area3 {
+            width: 60px;
+            margin-left: 5px;
+            margin-top: 15px;
+        }
+
+        .area4 {
+            width: 200px;
+            flex: 1;
+        }
+
+        .area5 {
+            grid-row-start: 3;
+            grid-row-end: 4;
+            background-color: #f6f9ff;
+            border-bottom-style: solid;
+            border-bottom-color: #e6e6e6;
+            border-bottom-width: 1px;
+            border-left-style: solid;
+            border-left-color: #5965db;
+            border-left-width: 4px;
+            display: flex;
+        }
+
+        .area6 {
+            width: 60px;
+            margin-left: 5px;
+            margin-top: 15px;
+        }
+
+        .area7 {
+            width: auto;
+            flex: 1;
+        }
+
+        .area8 {
+            grid-row-start: 4;
+            grid-row-end: 5;
+            border-bottom-style: solid;
+            border-color: #eaedf3;
+            border-width: 1px;
+            display: flex;
+        }
+
+        .area9 {
+            width: 60px;
+            margin-left: 5px;
+            margin-top: 15px;
+        }
+
+        .area10 {
+            width: auto;
+            flex: 1;
+        }
+
+        .area11 {
+            grid-row-start: 5;
+            grid-row-end: 6;
+            border-bottom-style: solid;
+            border-color: #eaedf3;
+            border-width: 1px;
+            display: flex;
+        }
+
+        .area12 {
+            width: 60px;
+            margin-left: 5px;
+            margin-top: 15px;
+        }
+
+        .area13 {
+            width: auto;
+            flex: 1;
+        }
+
+        .area14 {
+            grid-row-start: 6;
+            grid-row-end: 7;
+            border-bottom-style: solid;
+            border-color: #eaedf3;
+            border-width: 1px;
+            display: flex;
+        }
+
+        .area15 {
+            width: 50px;
+            margin-left: 10px;
+            margin-top: 30px;
+        }
+
+        .area16 {
+            width: auto;
+            flex: 1;
+        }
+
+        .area17 {
+            grid-row-start: 7;
+            grid-row-end: 8;
+            border-bottom-style: solid;
+            border-color: #eaedf3;
+            border-width: 1px;
+            display: flex;
+        }
+
+        .area18 {
+            width: 60px;
+            margin-left: 5px;
+            margin-top: 15px;
+        }
+
+        .area19 {
+            width: auto;
+            flex: 1;
+        }
+
+        .area20 {
+            grid-row-start: 8;
+            grid-row-end: 9;
+            border-bottom-style: solid;
+            border-color: #eaedf3;
+            border-width: 1px;
+            display: flex;
+        }
+
+        .area21 {
+            width: 60px;
+            margin-left: 10px;
+            margin-top: 30px;
+        }
+
+        .area22 {
+            width: auto;
+            flex: 1;
+        }
+
+        .area23 {
+            grid-row-start: 9;
+            grid-row-end: 10;
+            border-bottom-style: solid;
+            border-color: #eaedf3;
+            border-width: 1px;
+            display: flex;
+        }
+
+        .area24 {
+            width: 60px;
+            margin-left: 5px;
+            margin-top: 15px;
+        }
+
+        .area25 {
+            width: auto;
+            flex: 1;
+        }
+
+        .area26 {
+            grid-row-start: 1;
+            grid-row-end: 2;
+            border-bottom-style: solid;
+            border-color: #eaedf3;
+            border-width: 1px;
+            line-height: 45px;
+
+
+        }
+
+        .chat {
+            grid-row-start: 2;
+            grid-row-end: 3;
+            border-bottom-style: solid;
+            border-color: #eaedf3;
+            border-width: 1px;
+            font-size: 14px;
+        }
+
+        .l {
+            grid-row-start: 3;
+            grid-row-end: 4;
+            color: #76818c;
+            margin-left: 40px;
+        }
+
+        .chatting {
+            background-color: #5965db;
+            border-radius: 5px;
+        }
+
+        .news {
+            height: 30px;
+            width: 100px;
+            background-color: #ebedfb;
+            color: #5965db;
+            text-align: center;
+            line-height: 30px;
+            float: right;
+            margin-right: 30px;
+            margin-top: -40px;
+        }
+
+        .username {
+            color: rgb(153, 157, 163);
+            
+        }
+
+
+
+        .lefttext {
+            text-align: left;
+            position: relative;
+            background-color: rgb(89, 101, 219);
+            color: rgb(248, 250, 253);
+            white-space: normal;
+            width: 434px;
+            border-radius: 5px;
+        }
+
+        .righttext {
+            float: right;
+            position: relative;
+            white-space: normal;
+            width: 434px;
+            border-radius: 5px;
+            background-color: rgb(234, 239, 244);
+        }
+
+        .timeright {
+            text-align: right;
+            color: rgb(188, 194, 203);
+            font-size: 14px;
+        }
+
+        .timeleft {
+            text-align: left;
+            color: rgb(188, 194, 203);
+            font-size: 14px;
+        }
+        .user1::before{
+            content: url("images/peiyangfangan_26_50.gif");
+            line-height:10px;
+            color: rgb(153, 157, 163);
+            
+            
+        }
+        .username{
+            margin-left: auto;
+            vertical-align: middle;
+        }
+        .user2::before{
+            content: url("images/新建文件夹/peiyangfangan_03\ \(2\).png");
+            line-height:10px;
+            color: rgb(153, 157, 163);
+            text-align: left;
+        }
+        .user3::before{
+            content: url("images/新建文件夹/peiyangfangan_06.png");
+            line-height:10px;
+            color: rgb(153, 157, 163);
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <div class="one">
+            <div class="logo"><strong>LOGO</strong>示例</div>
+            <div class="name">
+                <div class="name1">
+                    <p style="float: left; margin-top: -5px;"><img src="images\peiyangfangan_26_03.gif" ;></p>
+                    <div class="name2">
+                        <p style="font-size: 18px;">名称示例 </p>
+                        <p style="font-size:14px;color:gray;">职业示例</p>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <p style="font-size: 14px; color: gray;">&nbsp;&nbsp;&nbsp;&nbsp;菜单</p>
+
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images\peiyangfangan_26_10.gif">&nbsp;&nbsp;仪表盘</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images\peiyangfangan_26_14.gif">&nbsp;&nbsp;用户列表</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images\peiyangfangan_26_17.gif">&nbsp;&nbsp;文件</p>
+                <div class="chatting">&nbsp;&nbsp;&nbsp;&nbsp;<img src="images\peiyangfangan_26_20.gif">&nbsp;&nbsp;聊天
+                    <p style="float: right; margin-top: 2px; margin-right: 7px;"><img src="images\peiyangfangan_14.png">
+                    </p>
+                </div>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images\peiyangfangan_26_23.gif">&nbsp;&nbsp;项目</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images\peiyangfangan_26_27.gif">&nbsp;&nbsp;日程表</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images\peiyangfangan_06.png">&nbsp;&nbsp;支付方式</p>
+                <p style="font-size: 14px; color: gray;">&nbsp;&nbsp;&nbsp;&nbsp;帮助</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images\peiyangfangan_26_37.gif">&nbsp;&nbsp;需要帮助？</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images\peiyangfangan_08.png">&nbsp;&nbsp;联系我们</p>
+                <p style="font-size: 14px; color: gray;">&nbsp;&nbsp;&nbsp;&nbsp;设置</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images\peiyangfangan_26_44.gif">&nbsp;&nbsp;账号设置</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images\peiyangfangan_26_47.gif">&nbsp;&nbsp;深色模式</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images\peiyangfangan_26_52.png">&nbsp;&nbsp;退出</p>
+            </div>
+        </div>
+        <div class="two">
+            <div class="area1">
+                <p style="line-height: 20px;">用户列表</p>
+                <div class="news">
+                    新消息
+                </div>
+            </div>
+            <div class="area2">
+                <div class="area3" style="float: left;">
+                    <img src="images\peiyangfangan_26_07.gif">
+                </div>
+                <div class="area4">
+                    <p>名称示例&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="color: gray;">4:01PM</span></p>
+                    <p style="font-size: 14px; color:#76818c ;">您现在应该可以访问所有文档，您可以现在试试看..</p>
+                </div>
+                <div style=" margin-top: 65px;">
+                    <img src="images\peiyangfangan_10.png">
+                </div>
+            </div>
+            <div class="area5">
+                <p class="area6" style="float: left;">
+                    <img src="images\peiyangfangan_26_12.gif">
+                </p>
+                <div class="area7">
+                    <p>名称示例&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="color: gray;">3:45PM</span></p>
+                    <p style="font-size: 14px; color:#76818c ;">您现在应该可以访问所有文档，您可以现在试试看..</p>
+
+                </div>
+            </div>
+            <div class="area8">
+                <div class="area9" style="float: left;">
+                    <img src="images\peiyangfangan_26_19.gif">
+                </div>
+                <div class="area10">
+                    <p>新项目&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="color: gray;">昨天</span></p>
+                    <p style="font-size: 14px; color:#76818c ;">您现在应该可以访问所有文档，您可以现在试试看..</p>
+                    <div style="margin-top: -25px; margin-left: 213px ;">
+                        <img src="images\peiyangfangan_17.png">
+                    </div>
+                </div>
+            </div>
+            <div class="area11">
+                <div class="area12" style="float: left;">
+                    <img src="images\peiyangfangan_26_30.gif">
+                </div>
+                <div class="area13">
+                    <p>进度更新&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="color: gray;">五天前</span></p>
+                    <p style="font-size: 14px; color:#76818c ;">您现在应该可以访问所有文档，您可以现在试试看..</p>
+                </div>
+            </div>
+            <div class="area14">
+                <div class="area15" style="float: left;">
+                    <img src="images\peiyangfangan_26_35.gif">
+                </div>
+                <div class="area16">
+                    <p>工作期望&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="color: gray;">一周前</span></p>
+                    <p style="font-size: 14px; color:#76818c ;">您现在应该可以访问所有文档，您可以现在试试看..</p>
+                    <div style=" margin-top:-25px; margin-left: 213px ;">
+                        <img src="images\peiyangfangan_19.png">
+                    </div>
+                </div>
+            </div>
+            <div class="area17">
+                <div class="area18" style="float: left;">
+                    <img src="images\peiyangfangan_26_43.gif">
+                </div>
+                <div class="area19">
+                    <p>第一个项目&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="color: gray;">三周前</span></p>
+                    <p style="font-size: 14px; color:#76818c ;">您现在应该可以访问所有文档，您可以现在试试看..</p>
+                    <div style=" margin-top:-25px; margin-left: 213px ;">
+                        <img src="images\peiyangfangan_19.png">
+                    </div>
+                </div>
+            </div>
+            <div class="area20">
+                <div class="area21" style="float: left;">
+                    <img src="images\peiyangfangan_26_50.gif">
+                </div>
+                <div class="area22">
+                    <p>新工作机会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="color: gray;">2019.10.03</span></p>
+                    <p style="font-size: 14px; color:#76818c ;">您现在应该可以访问所有文档，您可以现在试试看..</p>
+                    <div style=" margin-top:-25px; margin-left: 213px ;">
+                        <img src="images\peiyangfangan_21.png">
+                    </div>
+                </div>
+            </div>
+            <div class="area23">
+                <div class="area24" style="float: left;">
+                    <img src="images\peiyangfangan_26_56.png">
+                </div>
+                <div class="area25">
+                    <p>恭喜啦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="color: gray;">2019.10.02</span></p>
+                    <p style="font-size: 14px; color:#76818c ;">您现在应该可以访问所有文档，您可以现在试试看..</p>
+                </div>
+            </div>
+        </div>
+        <div class="three">
+            <div class="area26">
+                <div style="margin-left: 20px ;">团队新成员</div>
+                <div style="float: right; margin-top: -35px;">
+                    <img src="images\peiyangfangan_07.png">
+                </div>
+            </div>
+
+            <div class="chat">
+                <ul style="list-style-type:none">
+                    <li class="username">
+                        <p class="user1">
+                            名称示例&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           
+                            <span>9:52&nbsp;AM</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="lefttext" >嗨!王小样!我们真的非常欢迎您来加入我们的团队</p>
+                    </li>
+                    <li>
+
+                    </li>
+                    <li>
+
+                    </li>
+                    <li>
+
+                    </li>
+                    <li>
+                        <p class="timeright">11:08AM</p>
+                    </li>
+                    <li>
+                        <p class="righttext">谢谢您，我很高兴加入这个出色的设计个出色的设
+                            个出色的设团队!非常感谢能有机会开发一些会影响人们生活的产品。 我
+                            等不及要开始了!</p>
+                    </li>
+                    <li class="user1">
+                        <p class="username">
+                            名字示例&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           2:28PM
+                        </p>
+                    
+                   
+                    </li>
+                    <li>
+                        <p class="lefttext">
+                            我们很高兴有您，我们喜欢您在面试中向我们展示的工作，并且您非常适合我们
+                            团队和公司中的我们很高兴有您每个人。我们很高兴有您如果您有任何疑问，请
+                            随时询问，团队中的某个人将为您提供帮助。</p>
+                    </li>
+                    <li>
+                        <p class="lefttext">我们很高兴有您，我们喜欢您在面试中向我们展示的工作，
+                            井且您非常适合我们团队和公司中的我们很高兴有您每个人。</p>
+                    </li>
+                    <li><time class="timeright">2:28&nbsp;AM</time></li>
+                    <li>
+                        <p class="righttext">谢谢您，我很高兴加入这个出色的设计个出色的设
+                            个出色的设团队!非常感谢能有机会开发一些会影响人们生活的产品。 我
+                            等不及要开始了!</p>
+                    </li>
+                   
+                    <li class="user2">
+                        <p class="username">Angela Lopez
+                            <span class="timeleft">2:59
+                                &nbsp;AM</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="lefttext">谢谢您，我很高兴加入这个出色的设计个出色的设个出色
+                            的设团队!非常感谢能有机会开发一 些会影响人们生活的产 品，我等不及要开
+                            始了!</p>
+                    </li>
+                    <li class="user3">
+                        <p class="username">
+                            Terry Griffin<span class="timeleft">3:45&nbsp;AM</span></p>
+                        <p class="lefttext">恭喜，王小样，我知道您以后会觉得这是一个非常棒的团队!</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="l">在这里输入内容...
+                <img src="images/新建文件夹/peiyangfangan_03.png"style="float: right;">
+            </div>
+        </div>
+        <div class="four">
+            <div style="margin-left: 30px;">
+                <div style="float: left; line-height: 66px"><img src="images\peiyangfangan_03.png"></div>
+                <p style="line-height: 55px; font-size: 17px; color: gray;">请输入关键字</p>
+            </div>
+            <p style="float: right; margin-top: -70px; margin-right:100px ;"><img src="images\peiyangfangan_003.png"
+                    alt=""></p>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
